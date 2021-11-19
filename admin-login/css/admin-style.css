@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700;800&display=swap');
+/*Обнуление*/
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+/*--------------------------------------------------------*/
+
+* {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+body {
+    background-image:
+        linear-gradient(-45deg, #CC2B5E, #753A88, #2980b9);
+    background-size: 400% 200%;
+    animation: gradient 8s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0, 50%;
+    }
+}
+
+.box {
+    width: calc(500/1920 * 100%);
+    padding: 40px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #191919;
+    text-align: center;
+    z-index: 1;
+    box-shadow: 0 0 30px #191919;
+}
+
+.box h1 {
+    color: white;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.box input {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #3498db;
+    padding: 14px 10px;
+    width: 70%;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.4s;
+}
+
+.box input:focus {
+    width: 90%;
+    border-color: #2ecc71;
+}
+
+.box button {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color:white;
+    border-radius: 24px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.box button:hover {
+    background: #2ecc71;
+}

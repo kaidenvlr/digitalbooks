@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400;500;600;700;800&display=swap');
+/*Обнуление*/
+*{padding: 0;margin: 0;border: 0;}
+*,*:before,*:after{-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner{padding:0;border:0;}
+a,a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: inherit;}
+/*--------------------------------------------------------*/
+body {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+    width: 100%;
+    background-color: #ebebeb;
+}
+a { 
+    color: inherit;
+}
+a:visited {
+    color: inherit;
+}
+h3 {
+    font-weight: 700;
+    font-size: 20px;
+}
+h4 {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1500px;
+    min-height: 100%;
+    background-color: #ebebeb;
+}
+
+.button {
+    font-weight: 500;
+}
+
+.header {
+    margin-bottom: 30px;
+    background-color: #fff;
+}
+
+.page {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ebebeb;
+}
+
+.filter {
+    box-shadow: 0 0 10px #bbbbbb;
+    width: 300px;
+    height: 100%;
+    padding: 20px 10px;
+    background-color: #fff;
+}
+.filter>form>ul>li {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 22px;
+    font-weight: 600;
+}
+.filter>form>ul>li>ul {
+    margin-top: 15px;
+}
+.filter>form>ul>li>ul>li {
+    text-align: left;
+    margin-bottom: 7px;
+    font-size: 14px;
+    font-weight: 400;
+}
+.filter>form>ul>li>ul>li>label {
+    margin-left: 10px;
+}
+
+.filterbutton {
+    font-size: 16px;
+    font-weight: 600;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto 0;
+    text-align: center;
+    border: 2px solid #87ceeb;
+    padding: 5px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.4s;
+    cursor: pointer;
+    background-color: rgb(135, 206, 235);
+}
+
+.filterbutton:hover {
+    background: rgb(105, 176, 205);
+    border-color: rgb(105, 176, 205);
+    color: black;
+}
+
+.library {
+    box-shadow: 0 0 10px #bbbbbb;
+    height: 100%;
+    width: 1170px;
+    margin-left: 30px;
+    padding: 20px 10px;
+    background-color: #fff;
+}
+
+.library>p {
+    margin-left: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.container-book {
+    border: 1px solid #ebebeb;
+    margin: 20px;
+    display: flex;
+}
+
+.bookimage {
+    width: 300px;
+    border: 1px solid #2d0e2d;
+    text-align: center;
+    display: block;
+    margin: 10px;
+}
+
+.bookimage img {
+    width: 200px;
+}
+
+.information {
+    display: block;
+    margin: 10px;
+}
+
+.information h4 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.information p {
+    font-size: 13px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}

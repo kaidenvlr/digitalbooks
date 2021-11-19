@@ -1,0 +1,54 @@
+.header {
+    display: flex;
+    background-color: rgba(148,187,233,1);
+    box-shadow: 0 0 10px #bbb;
+    justify-content: space-around;
+}
+
+.banner {
+    margin-left: 20px;
+    padding: 0 30px;
+    font-size: 14px;
+    background-color: rgba(148,187,233,1);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: 0.4s;
+    color: rgb(240, 240, 240);
+}
+
+.banner:hover {
+    background-color: rgb(105, 176, 205);
+}
+
+.rightbar {
+    display: flex;
+    margin-left: auto;
+    margin-right: 0em;
+}
+
+.navbar {
+    display: flex;
+    overflow: hidden;
+    background-color: rgba(148,187,233,1);
+}
+/* Ссылки в панели навигации */
+.navbar a {
+    margin-right: 20px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: rgba(148,187,233,1);
+    color: rgb(240, 240, 240);
+    text-align: center;
+    padding: 20px 30px;
+    text-decoration: none;
+    width: 135px;
+    transition: 0.4s;
+}
+
+/* Добавить красный цвет фона для ссылок на навигационную панель при наведении курсора */
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: rgb(105, 176, 205);
+}

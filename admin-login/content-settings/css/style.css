@@ -1,0 +1,292 @@
+.ves-action {
+    width: 100%;
+}
+
+.hheader {
+    display: flex;
+}
+
+.hheader h4 {
+    position: relative;
+    margin: auto;
+}
+
+.hheader .adding-admin {
+    position: relative;
+    margin: auto;
+    margin-left: calc(940/2880 * 100% - 225.7625px + 300px);
+}
+
+.hheader .editing-admin {
+    position: relative;
+    margin: auto;
+    margin-left: calc(940/2880 * 100% + 300px - 224.1625px);
+}
+
+.hheader .managing-admin {
+    position: relative;
+    margin: auto;
+    margin-left: calc(940/2880 * 100% + 300px - 313.41px);
+}
+
+.right {
+    margin: auto;
+    border: 0;
+    background: none;
+    display: block;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color:white;
+    border-radius: 24px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.right:hover {
+    background: #2ecc71;
+}
+
+.export {
+    margin-right: 5px;
+    border: 0;
+    background: none;
+    display: block;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color:white;
+    border-radius: 24px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+.export:hover {
+    background: #2ecc71;
+}
+
+.view {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    position: relative;
+    width: 100%;
+}
+
+.view table {
+    width: 100%;
+    background-color: #2d2d2d;
+    overflow: auto;
+}
+
+.view th {
+    width: 120px;
+}
+
+.view tr {
+    height: 50px;
+}
+
+.view td {
+    transition: 0.4s;
+}
+
+.view td:hover {
+    background: #3e3e3e;
+}
+
+.fa-edit {
+    color: lightblue;
+}
+
+.fa-trash-alt {
+    color: lightcoral;
+}
+.ves-action {
+    margin-top: 20px;
+}
+.view>form{
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.row {
+    display: flex;
+}
+.containr {
+    width: 50%;
+}
+.name input, .date-birth input, .date-death input, .containr input, .submit-button {
+    margin-top: 20px;
+}
+.name input, .date-birth input, .date-death input, .containr input {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px 30px;
+    border-radius: 15px;
+}
+.name input, .date-birth input, .date-death input, .containr input{
+    border: 2px solid #3e3e3e;
+    color: white;
+    background-color: inherit;
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s;
+}
+.name input:focus, .date-birth input:focus, .date-death input:focus, .containr input:focus{
+    border-color: #2ecc71;
+    transition: 0.4s;
+}
+
+.submit-button{
+    position: absolute;
+    width: 25%;
+    left: calc(1078/2880 * 100%);
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color:white;
+    border-radius: 24px;
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+.submit-button {
+    padding: 10px 20px;
+    border-radius: 20px;
+}
+
+.name input:focus, .date-birth input:focus, .date-death input:focus, .submit-button:hover {
+    border-color: #2eec6e;
+    transition: 0.4s;
+}
+
+.submit-button:hover {
+    background-color: #2eec6e;
+}
+
+.gender {
+    margin: 20px auto 0;
+    width: 229px;
+    display: inline-block;
+    background-color: inherit;
+    border: 2px solid #3e3e3e;
+    border-radius: 15px;
+    color: white;
+    transition: all .5s ease;
+    position: relative;
+    font-size: 13px;
+    height: 60px;
+    text-align: left;
+}
+.gender span {
+    display: inline-block;
+    margin-top: 2px;
+}
+.gender .select {
+    cursor: pointer;
+    display: block;
+    padding: 20px 30px;
+
+}
+.gender .select > i {
+    font-size: 14px;
+    color: #888;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    float: right;
+    line-height: 20px
+}
+
+.gender:active {
+    background-color: inherit;
+}
+.gender.active:hover, .gender.active {
+    background-color: inherit;
+}
+.gender.active .select > i {
+    transform: rotate(90deg);
+}
+.gender .dropdown-menu {
+    position: absolute;
+    background-color: #3e3e3e;
+    width: 229px;
+    color: white;
+    left: -2px;
+    margin-top: 3px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+    max-height: 144px;
+    overflow-y: auto;
+    z-index: 9
+}
+.gender .dropdown-menu li {
+    padding: 10px 20px;
+    transition: all .2s ease-in-out;
+    cursor: pointer
+} 
+.gender .dropdown-menu {
+    padding: 0;
+    list-style: none;
+}
+.gender .dropdown-menu li:hover {
+    background-color: #2d2d2d;
+}
+.gender .dropdown-menu li:active {
+    background-color: #3e3e3e;
+}
+
+#author, #genre {
+    padding: 20px 30px;
+    margin: 20px auto 0;
+    width: 229px;
+    display: inline-block;
+    background-color: inherit;
+    border: 2px solid #3e3e3e;
+    border-radius: 15px;
+    color: white;
+    transition: all .5s ease;
+    position: relative;
+    font-size: 13px;
+    height: 60px;
+}
+#author:focus, #author:hover, #genre:focus, #genre:hover {
+    border: 3px solid #2ecc71;
+}
+
+.drop-content {
+    display: none;
+    background-color: inherit;
+    border: 1px solid #2d2d2d;
+    border-radius: 15px;
+    z-index: 1;
+    opacity: 1;
+    max-height: 42%;
+    overflow: hidden;
+    width: 229px;
+    position: absolute;
+    top: calc(50% - 20px);
+    left: calc(50% + 240px / 2);
+}
+
+.drop-content a{
+    display: block;
+    color: #000;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
+.drop-content a:hover {
+    background-color: #3e3e3e;
+}
+
+.show {
+    display: block;
+}
