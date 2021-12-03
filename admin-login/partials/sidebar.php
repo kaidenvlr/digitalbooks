@@ -9,8 +9,25 @@
             if (document.getElementById("content").classList.toggle("show") == true)
                 document.getElementById("content").classList.toggle("show");
         }
+        if (obj == "dropdownbtn2") {
+            document.getElementById("content2").classList.toggle("show2");
+        } else {
+            if (document.getElementById("content2").classList.toggle("show2") == true)
+                document.getElementById("content2").classList.toggle("show2");
+        }
+
     }, true);
 
+    document.body.addEventListener("click", function() {
+        var evt = window.event || evt;
+        var obj = evt.target.id;
+        if (obj == "dropdownbtn2") {
+            document.getElementById("content2").classList.toggle("show2");
+        } else {
+            if (document.getElementById("content2").classList.toggle("show2") == true)
+                document.getElementById("content2").classList.toggle("show2");
+        }
+    })
 </script>
 <style>
     .sidebar {
@@ -88,5 +105,11 @@
     </div>
     <div class="sb-element">
         <a href="/admin-login/content-settings/admin-managing.php" class="dropdownbtn">Управление администраторами</a>
+    </div>
+    <div class="sb-element">
+        <a href="/admin-login/content-settings/backuplist.php" class="dropdownbtn">Управление резервными копиями</a>
+    </div>
+    <div class="sb-element">
+        <a href="/admin-login/content-settings/transactions.php" class="dropdownbtn">Управление транзакциями</a>
     </div>
 </div>

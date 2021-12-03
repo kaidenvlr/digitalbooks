@@ -99,11 +99,18 @@ if (empty($email_address))
                             $stmt = mysqli_prepare($conn, $sql);
                             mysqli_stmt_bind_param($stmt, "sss", $_POST['name'], $_POST['dateBirth'], $_POST['dateDeath']);
                             mysqli_stmt_execute($stmt);
+                            $sqlTransaction = "INSERT INTO transactions (name, description) VALUES ('Add author', 'Add author ".$_POST['name']."')";
+                            $stmt = mysqli_prepare($conn, $sqlTransaction);
+                            $stmt -> execute();
                         } else {
                             $sql = "UPDATE author SET name=?, date_birth=?, date_death=? WHERE id=".$_GET['edit'];
                             $stmt = mysqli_prepare($conn, $sql);
                             $stmt -> bind_param("sss", $_POST['name'], $_POST['dateBirth'], $_POST['dateDeath']);
                             $stmt -> execute();
+                            $sqlTransaction = "INSERT INTO transactions (name, description) VALUES ('Edit Author', 'Edit author ".$_POST['name']."')";
+                            if (!mysqli_query($conn, $sqlTransaction)) {
+                                echo ("Error:".mysqli_error($conn));
+                            }
                         }
                     }
                 ?>

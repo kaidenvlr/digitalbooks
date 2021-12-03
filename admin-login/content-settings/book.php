@@ -105,6 +105,9 @@ if (empty($email_address))
                             $stmt = mysqli_prepare($conn, $sql);
                             mysqli_stmt_bind_param($stmt, "sii", $_POST['name'], $dataauthor['id'], $datagenre['id']);
                             mysqli_stmt_execute($stmt);
+                            $sqlTransaction = "INSERT INTO transactions (name, description) VALUES ('Add book', 'Add book ".$_POST['name']."')";
+                            $stmt = mysqli_prepare($conn, $sqlTransaction);
+                            $stmt -> execute();
                         } else {
                             $sqlauthor = "SELECT id FROM author WHERE name='".$_POST['authorId']."'";
                             $resauthor = $conn -> query($sqlauthor);
@@ -115,6 +118,9 @@ if (empty($email_address))
                             $sql = "UPDATE book SET name=?, authorId=?, genreId=? WHERE id=".$_GET['edit'];
                             $stmt = mysqli_prepare($conn, $sql);
                             $stmt -> bind_param("sii", $_POST['name'], $dataauthor['id'], $datagenre['id']);
+                            $stmt -> execute();
+                            $sqlTransaction = "INSERT INTO transactions (name, description) VALUES ('Edit book', 'Edit book ".$_POST['name']."')";
+                            $stmt = mysqli_prepare($conn, $sqlTransaction);
                             $stmt -> execute();
                         }
                     }

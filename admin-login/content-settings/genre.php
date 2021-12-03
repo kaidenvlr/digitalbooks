@@ -95,10 +95,16 @@ if (empty($email_address))
                             $stmt = mysqli_prepare($conn, $sql);
                             mysqli_stmt_bind_param($stmt, "s", $_POST['name']);
                             mysqli_stmt_execute($stmt);
+                            $sqlTransaction = "INSERT INTO transactions (name, description) VALUES ('Add genre', 'Add genre ".$_POST['name']."')";
+                            $stmt = mysqli_prepare($conn, $sqlTransaction);
+                            $stmt -> execute();
                         } else {
                             $sql = "UPDATE genre SET name=? WHERE id=".$_GET['edit'];
                             $stmt = mysqli_prepare($conn, $sql);
                             $stmt -> bind_param("s", $_POST['name']);
+                            $stmt -> execute();
+                            $sqlTransaction = "INSERT INTO transactions (name, description) VALUES ('Edit genre', 'Edit genre ".$_POST['name']."')";
+                            $stmt = mysqli_prepare($conn, $sqlTransaction);
                             $stmt -> execute();
                         }
                     }
