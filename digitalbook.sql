@@ -35,6 +35,12 @@ CREATE TABLE if not exists book (
     foreign key (genreId) references genres (id) on delete cascade
 ) engine=MyISAM DEFAULT CHARSET=latin1;
 
+CREATE TABLE `digitalbook`.`transactions` (
+  `id` INT NOT NULL,
+  `name` VARCHAR(45) NOT NULL,
+  `description` TEXT NULL,
+  PRIMARY KEY (`id`));
+
 insert into admins values (1, 'r1nce', 'password', 'jzxcvblessed@gmail.com', 'male', 'Zhanibek', 'Jumadiyev');
 
 insert into authors values (1, 'Eiichiro Oda', '01.01.1975', 'alive', 1);
