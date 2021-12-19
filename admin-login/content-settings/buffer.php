@@ -102,5 +102,52 @@
         }
     }
 
+    if (!empty($_GET['fullDeleteId']) && !empty($_GET['fullDeleteData'])) {
+        if ($_GET['fullDeleteData'] == 'full-delete-author') {
+            $sql = "SELECT name FROM author WHERE id=".$_GET['fullDeleteId'];
+            $res = $conn -> query($sql);
+            $data = mysqli_fetch_assoc($res);
+
+            $sqlTransaction = "INSERT INTO transactions (name, description) VALUES ('Full deleted author', 'Full delete author ".$data['name']."')";
+            $stmt = mysqli_prepare($conn, $sqlTransaction);
+            $stmt -> execute();
+
+            $sqlbook = "DELETE FROM book WHERE authorId=".$_GET['fullDeleteId'];
+            $stmtbook = mysqli_prepare($conn, $sqlbook);
+            $stmtbook -> execute();
+
+            $sqlauthor = "DELETE FROM author WHERE id=".$_GET['fullDeleteId'];
+            $stmtauthor = mysqli_prepare($conn, $sqlauthor);
+            $stmtauthor -> execute();
+        } else if ($_GET['fullDeleteData'] == 'full-delete-genre') {
+            $sql = "SELECT name FROM genre WHERE id=".$_GET['fullDeleteId'];
+            $res = $conn -> query($sql);
+            $data = mysqli_fetch_assoc($res);
+
+            $sqlTransaction = "INSERT INTO transactions (name, description) VALUES ('Full deleted genre', 'Full delete genre ".$data['name']."')";
+            $stmtTransaction = mysqli_prepare($conn, $sqlTransaction);
+            $stmtTransaction -> execute();
+
+            $sqlbook = "DELETE FROM book WHERE genreId=".$_GET['fullDeleteId'];
+            $stmtbook = mysqli_prepare($conn, $sqlbook);
+            $stmtbook -> execute();
+
+            $sqlgenre = "DELETE FROM genre WHERE id=".$_GET['fullDeleteId'];
+            $stmtgenre = mysqli_prepare($conn, $sqlgenre);
+            $stmtgenre -> execute();
+        } else if ($_GET['fullDeleteData'] == 'full-delete-book') {
+            $sql = "SELECT name FROM book WHERE id=".$_GET['fullDeleteId'];
+            $res = $conn -> query($sql);
+            $data = mysqli_fetch_assoc($res);
+
+            $sqlTransaction = "INSERT INTO transactions (name, description) VALUES ('Full deleted book', 'Full delete book ".$data['name']."')";
+            $stmtTransaction = mysqli_prepare($conn, $sqlTransaction);
+            $stmtTransaction -> execute();
+
+            $sqlbook = "DELETE FROM book WHERE id=".$_GET['fullDeleteId'];
+            $stmtbook = mysqli_prepare($conn, $sqlbook);
+            $stmtbook -> execute();
+        }
+    }
 
 ?>

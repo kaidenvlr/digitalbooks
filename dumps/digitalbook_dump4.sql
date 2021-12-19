@@ -118,7 +118,7 @@ CREATE TABLE `book` (
 
 LOCK TABLES `book` WRITE;
 /*!40000 ALTER TABLE `book` DISABLE KEYS */;
-INSERT INTO `book` VALUES (1,'Bleach',8,6,1),(2,'Hunter x Hunter',6,6,1),(3,'One Piece',1,6,1),(4,'Naruto',2,6,1),(5,'JoJo`s Bizzare Adventure',3,6,1),(6,'Slam Dunk',4,6,1),(7,'Berserk',5,6,1),(8,'Sailor Moon',7,6,1),(9,'One Piece2',1,6,1);
+INSERT INTO `book` VALUES (1,'Bleach',8,6,2),(2,'Hunter x Hunter',6,6,2),(3,'One Piece',1,6,2),(4,'Naruto',2,6,2),(5,'JoJo`s Bizzare Adventure',3,6,2),(6,'Slam Dunk',4,6,2),(7,'Berserk',5,6,2),(8,'Sailor Moon',7,6,2),(9,'One Piece2',1,6,2);
 /*!40000 ALTER TABLE `book` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -143,7 +143,7 @@ CREATE TABLE `genre` (
 
 LOCK TABLES `genre` WRITE;
 /*!40000 ALTER TABLE `genre` DISABLE KEYS */;
-INSERT INTO `genre` VALUES (1,'Detective',1),(2,'Fantasy',1),(3,'Action',1),(4,'Biography',1),(5,'History',1),(6,'Manga',1),(7,'Comics',1);
+INSERT INTO `genre` VALUES (1,'Detective',1),(2,'Fantasy',1),(3,'Action',1),(4,'Biography',1),(5,'History',1),(6,'Manga',0),(7,'Comics',1);
 /*!40000 ALTER TABLE `genre` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -159,7 +159,7 @@ CREATE TABLE `transactions` (
   `name` varchar(45) NOT NULL,
   `description` varchar(90) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -168,7 +168,7 @@ CREATE TABLE `transactions` (
 
 LOCK TABLES `transactions` WRITE;
 /*!40000 ALTER TABLE `transactions` DISABLE KEYS */;
-INSERT INTO `transactions` VALUES (1,'Edit Author','Edit author Eiichiro Oda'),(2,'Delete author','Delete author Eiichiro Oda'),(3,'Delete author','Delete author Tolstoy Leo'),(4,'Delete author','Delete author Dostoevsky Fyodor'),(5,'Delete author','Delete author Yesenin Sergei'),(6,'Restore author','Restore author Eiichiro Oda'),(7,'Restore author','Restore author Dostoevsky Fyodor'),(8,'Restore author','Restore author Yesenin Sergei'),(9,'Delete author','Delete author Eiichiro Oda'),(10,'Delete author','Delete author Masashi Kishimoto'),(11,'Delete author','Delete author Hirohiko Araki'),(12,'Delete author','Delete author Takehiko Inoue'),(13,'Delete genre','Delete genre Manga'),(14,'Restore genre','Restore genre Manga'),(15,'Restore author','Restore author Eiichiro Oda'),(16,'Restore author','Restore author Masashi Kishimoto'),(17,'Restore author','Restore author Hirohiko Araki'),(18,'Restore author','Restore author Takehiko Inoue'),(19,'Restore author','Restore author Tolstoy Leo');
+INSERT INTO `transactions` VALUES (1,'Edit Author','Edit author Eiichiro Oda'),(2,'Delete author','Delete author Eiichiro Oda'),(3,'Delete author','Delete author Tolstoy Leo'),(4,'Delete author','Delete author Dostoevsky Fyodor'),(5,'Delete author','Delete author Yesenin Sergei'),(6,'Restore author','Restore author Eiichiro Oda'),(7,'Restore author','Restore author Dostoevsky Fyodor'),(8,'Restore author','Restore author Yesenin Sergei'),(9,'Delete author','Delete author Eiichiro Oda'),(10,'Delete author','Delete author Masashi Kishimoto'),(11,'Delete author','Delete author Hirohiko Araki'),(12,'Delete author','Delete author Takehiko Inoue'),(13,'Delete genre','Delete genre Manga'),(14,'Restore genre','Restore genre Manga'),(15,'Restore author','Restore author Eiichiro Oda'),(16,'Restore author','Restore author Masashi Kishimoto'),(17,'Restore author','Restore author Hirohiko Araki'),(18,'Restore author','Restore author Takehiko Inoue'),(19,'Restore author','Restore author Tolstoy Leo'),(20,'Delete genre','Delete genre Manga');
 /*!40000 ALTER TABLE `transactions` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -181,4 +181,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-12-04  9:16:20
+-- Dump completed on 2021-12-04  9:17:03

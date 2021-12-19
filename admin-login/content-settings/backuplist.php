@@ -1,7 +1,13 @@
 <?php
     session_start();
     $email_address = $_SESSION['email'];
-    include('../../config/dbConnect.php');
+    $hostname = "localhost:3307";
+    $username = "dbadmin";
+    $password = "12345";
+    $databasename = "backupdigitalbook";
+
+    $conn = new mysqli($hostname, $username, $password, $databasename);
+    
     if (empty($email_address)) {
         header("Location: digitalbooks/admin-panel/index.php");
     }

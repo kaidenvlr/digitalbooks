@@ -39,7 +39,7 @@
                             <th></th>
                         </tr>    
                         <?php
-                        $sql = "SELECT name, description FROM transactions ORDER BY id DESC LIMIT 50";
+                        $sql = "SELECT name, description FROM transactions ORDER BY id DESC LIMIT 10";
                         $res = $conn -> query($sql);
                         if ($res -> num_rows > 0) {
                             while ($data = mysqli_fetch_assoc($res)){

@@ -57,6 +57,24 @@ if (empty($email_address))
                 }
             })
         });
+        
+        $(document).on('click', '.full-delete', function(e) {
+            var el = $(this);
+            var id = $(this).attr('id');
+            var name = $(this).attr('name');
+            $.ajax({
+                type: "GET",
+                url: "buffer.php",
+                data: {
+                    fullDeleteId: id,
+                    fullDeleteData: name
+                },
+                dataType: "html",
+                success: function(data) {
+                    alert("Full deleted!");
+                }
+            })
+        });
     </script>
 </head>
 <body>
@@ -186,7 +204,7 @@ if (empty($email_address))
                         <tr>
                             <td><?php echo $data['name']; ?></td>
                             <td></td>
-                            <td><a href="genre.php?cat=add-genre&edit=<?php echo $data['id']; ?>"><i class="far fa-edit"></i></a></td>
+                            <td><a href="javascript:void(0)" class="full-delete" name="full-delete-author" id="<?php echo $data['id']; ?>"><i class="far fa-trash-alt"></i></a></td>
                             <td><a href="javascript:void(0)" class="restore" name="restore-genre" id="<?php echo $data['id']; ?>"><i class="far fa-trash-alt"></i></a></td>
                         </tr>
                         <?php

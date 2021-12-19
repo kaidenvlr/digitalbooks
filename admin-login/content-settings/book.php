@@ -57,6 +57,24 @@ if (empty($email_address))
                 }
             })
         });
+
+        $(document).on('click', '.full-delete', function(e) {
+            var el = $(this);
+            var id = $(this).attr('id');
+            var name = $(this).attr('name');
+            $.ajax({
+                type: "GET",
+                url: "buffer.php",
+                data: {
+                    fullDeleteId: id,
+                    fullDeleteData: name
+                },
+                dataType: "html",
+                success: function(data) {
+                    alert("Full deleted!");
+                }
+            })
+        });
     </script>
 </head>
 <body>
@@ -151,10 +169,14 @@ if (empty($email_address))
                             ?>" required>
                             <div class="drop-content author" id="myDropdownAuthor">
                                 <?php
-                                    $sql = "SELECT name FROM author ORDER BY name WHERE flag = 1";
+                                    $sql = "SELECT name FROM author WHERE flag=1 ORDER BY name";
                                     $res = $conn -> query($sql);
-                                    while ($data = mysqli_fetch_assoc($res)) {
-                                        echo "<a href='#' onclick='enter1(this)' id='absolute'>".$data['name']."</a>";
+                                    if (mysqli_fetch_assoc($res))
+                                        while ($data = mysqli_fetch_assoc($res)) {
+                                            echo "<a href='#' onclick='enter1(this)' id='absolute'>".$data['name']."</a>";
+                                        }
+                                    else {
+                                        echo mysqli_error($conn);
                                     }
                                 ?>
                             </div>
@@ -204,7 +226,7 @@ if (empty($email_address))
                             ?>" required>
                             <div class="drop-content genre" id="myDropdownGenre">
                                 <?php
-                                    $sql = "SELECT name FROM genre ORDER BY name WHERE flag = 1";
+                                    $sql = "SELECT name FROM genre WHERE flag = 1  ORDER BY name";
                                     $res = $conn -> query($sql);
                                     while ($data = mysqli_fetch_assoc($res)) {
                                         echo "<a href='#' onclick='enter2(this)' id='absolute'>".$data['name']."</a>";
@@ -262,6 +284,8 @@ if (empty($email_address))
                             <th>Автор</th>
                             <th>Жанр</th>
                             <th></th>
+                            <th>Картинка</th>
+                            <th>Файл</th>
                             <th>Редактировать</th>
                             <th>Удалить</th>
                         </tr>
@@ -288,6 +312,8 @@ if (empty($email_address))
                                 }
                             ?></td>
                             <td></td>
+                            <td><a href="image.php?id=<?php echo $data['id']; ?>"><i class="far fa-file-image"></i></a></td>
+                            <td><a href="file.php?id=<?php echo $data['id']; ?>"><i class="fas fa-file-alt"></i></a></td>
                             <td><a href="book.php?cat=add-book&edit=<?php echo $data['id']; ?>"><i class="far fa-edit"></i></a></td>
                             <td><a href="javascript:void(0)" class="delete" name="delete-book" id="<?php echo $data['id']; ?>"><i class="far fa-trash-alt"></i></a></td>
                         </tr>
@@ -339,7 +365,7 @@ if (empty($email_address))
                                 }
                             ?></td>
                             <td></td>
-                            <td><a href="book.php?cat=add-book&edit=<?php echo $data['id']; ?>"><i class="far fa-edit"></i></a></td>
+                            <td><a href="javascript:void(0)" class="full-delete" name="full-delete-book" id="<?php echo $data['id']; ?>"><i class="far fa-trash-alt"></i></a></td>
                             <td><a href="javascript:void(0)" class="restore" name="restore-book" id="<?php echo $data['id']; ?>"><i class="far fa-trash-alt"></i></a></td>
                         </tr>
                         <?php

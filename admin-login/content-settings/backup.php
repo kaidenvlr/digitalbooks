@@ -1,5 +1,11 @@
 <?php
-    include("../../config/dbConnect.php");
+    $hostname = "localhost:3307";
+    $username = "dbadmin";
+    $password = "12345";
+    $databasename = "backupdigitalbook";
+
+    $conn = new mysqli($hostname, $username, $password, $databasename);
+    
     shell_exec("cd C:\Program Files\MySQL\MySQL Server 8.0\bin");
     $today = date("Y-m-d");
     $data = mysqli_fetch_assoc($conn -> query("SELECT id FROM backup ORDER BY id DESC LIMIT 1"));

@@ -5,22 +5,29 @@
     background: radial-gradient(circle, rgba(237,193,212,1) 0%, rgba(148,187,233,1) 100%);
     color: white;
     display: flex;
-    padding: 20px 10%;
+    padding: 15px 10%;
     align-items: center;
     box-shadow: 0 0 10px #bbb;
 }
 
 .logo {
-    margin-right: 30px;
+    
+    margin-left: 20px;
+    padding: 0 30px;
+    font-size: 14px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    transition: 0.4s;
+    color: rgb(240, 240, 240);
 }
 
 .logo>h3{
-    font-size: 24px;
-    font-weight: 500;
+    font-weight: 300;
 }
 .logo>h4 {
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .right {
@@ -39,11 +46,11 @@
 .linkbar>li>a {
     margin: 0 0 0 70px;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .info {
     margin-left: 70px;
     font-size: 14px;
-    font-weight: 400;
+    font-weight: 300;
 }
