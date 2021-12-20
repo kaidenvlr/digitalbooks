@@ -5,6 +5,7 @@
     if (empty($email_address)) {
         header("Location: digitalbooks/admin-panel/index.php");
     }
+    $id = $_GET['id'];
 ?>
 
 <!DOCTYPE html>
@@ -24,9 +25,11 @@
             <?php include("../partials/sidebar.php"); ?>
             <div class="ves-action">
                 <form action="upload.php" method="post" enctype="multipart/form-data">
-                <input type="text" name="id" placeholder="<?php echo $_GET['id']; ?>" disabled>
-                    <label for="image">Загрузить файл: </label><input type="file" name="file">
-                    <button type="submit">Загрузить</button>
+                    <label style="font-size:12px; font-weight: 400;margin-right:10px;" for="id">id</label><input type="text" name="id" placeholder="<?php echo $id; ?>" disabled>
+                    <hr>
+                    <label style="font-size: 12px; font-weight: 400;margin-right:10px;" for="file">Загрузить файл:</label><input type="file" name="file">
+                    <hr>
+                    <button onclick="document.cookie = 'id=<?php echo $id; ?>'"style="background-color: inherit; color: white; border: 5px solid #eba4ba; border-radius: 32px; padding: 20px 10px; width: 300px; margin-top: 20px;" type="submit">Загрузить</button>
                 </form>
             </div>
         </div>

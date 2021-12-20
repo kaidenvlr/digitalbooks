@@ -23,8 +23,27 @@
                         <li>Genre
                             <ul>
                                 <?php
-                                    $sqlgenres = "SELECT * FROM genre WHERE flag = 1 ORDER BY name";
+                                    if (isset($_GET['authors'])) {
+                                        $authortogenre = "";
+                                        foreach ($_GET['authors'] as $n => $row) {
+                                            $authortogenre .= $row;
+                                            if ($n < count($_GET['authors']) - 1) {
+                                                $authortogenre .= ", ";
+                                            }
+                                        }
+                                        $sqlgenres = "  SELECT    g.name as name,
+                                                                g.id as id
+                                                        FROM genre as g
+                                                        WHERE g.id in (
+                                                            SELECT b.genreId
+                                                            FROM book as b
+                                                            WHERE b.authorId in (".$authortogenre.")
+                                                        )";
+                                    } else {
+                                        $sqlgenres = "SELECT * FROM genre WHERE flag = 1 ORDER BY name";
+                                    }
                                     $res = $conn -> query($sqlgenres);
+                                    if (!$res) echo mysqli_error($conn);
                                     while ($data = mysqli_fetch_assoc($res)) {
                                     ?>
                                     <li><input type="checkbox" name="genres[]" value="<?php echo $data['id']; ?>" id="genre-<?php echo $data['id']; ?>" <?php if (isset($_GET['genres'])) { 
@@ -44,7 +63,14 @@
                                                 $genretoauthor .= ", ";
                                             }
                                         }
-                                        $sqlauthors = "SELECT a.name as name, a.id as id from author as a where a.id in (select b.id from book as b where b.genreId in (".$genretoauthor."))";
+                                        $sqlauthors = "SELECT a.name as name, 
+                                                              a.id as id 
+                                                       FROM author as a 
+                                                       where a.id in (
+                                                           select b.authorId 
+                                                           from book as b 
+                                                           where b.genreId in (".$genretoauthor.")
+                                                        )";
                                     } else {
                                         $sqlauthors = "SELECT * FROM author WHERE flag = 1 ORDER BY name";
                                     }
@@ -123,6 +149,11 @@
                         <h4><?php echo $data['bookname'] ?></h4>
                         <p>Genre: <?php echo $data['genrename'] ?></p>
                         <p>Author: <?php echo $data['authorname'] ?></p>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <a href="media/books/<?php echo $data['bookid']; ?>.pdf" download>Download book</a>
                     </div>
                 </div>
                 <?php
